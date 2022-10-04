@@ -2,6 +2,7 @@ use actix_web::{middleware::Logger, App, HttpServer};
 
 mod api;
 mod model;
+mod repository;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
