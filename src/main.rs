@@ -5,10 +5,12 @@ mod model;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    // ロギングの設定
     std::env::set_var("RUST_LOG", "debug");
     std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
 
+    // Httpサーバーの立ち上げ
     HttpServer::new(move || {
         let logger = Logger::default();
         App::new()
